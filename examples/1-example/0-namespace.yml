@@ -1,0 +1,8 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: demo-ns 
+  labels:
+    istio-injection: enabled
+

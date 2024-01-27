@@ -1,0 +1,9 @@
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: allow-nothing
+  namespace: stage-ns
+spec:
+  action: ALLOW
+  # the rules field is not specified, and the policy will never match.
+

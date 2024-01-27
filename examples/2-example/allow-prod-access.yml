@@ -1,0 +1,12 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: allow-access
+  namespace: prod-ns
+spec:
+  action: ALLOW
+  rules:
+  - from:
+    - source:
+        namespaces: ["stage-ns"]
+

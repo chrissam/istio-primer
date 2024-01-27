@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: first-app-v2
+  namespace: demo-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: first-app
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: first-app
+        version: v2
+    spec:
+      containers:
+        - image: amasucci/bluegreen
+          imagePullPolicy: Always
+          name: first-app
+          env:
+            - name: SERVICE
+              value: first-app
+            - name: VERSION
+              value: v2
+            - name: COLOR
+              value: green
+          ports:
+            - name: http
+              containerPort: 80

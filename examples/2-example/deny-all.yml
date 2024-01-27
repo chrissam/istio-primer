@@ -1,0 +1,11 @@
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: deny-all
+  namespace: stage-ns
+spec:
+  action: DENY
+  # the rules field has an empty rule, and the policy will always match.
+  rules:
+  - {}
+
