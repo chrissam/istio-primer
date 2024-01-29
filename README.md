@@ -1,3 +1,8 @@
+### Install k8s cluster using kind
+
+```
+kind create cluster --config=demo-cluster.yml
+```
 
 ### Istio Installation
 
