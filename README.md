@@ -29,6 +29,7 @@ helm show values istio/gateway > helm-default/istio-gateway-default.yml
 ### Install istio in the kind cluster using terraform
 
 ```
+cd istio-terraform
 terraform apply
 
 ```
@@ -45,6 +46,7 @@ k patch service gateway -n istio-ingress --patch "$(cat patch-ingressgateway-nod
 ### Canary Example
 
 ```
+cd examples/1-example
 k apply -f 0-namespace.yml
 k apply -f 1-deployment-v1.yml
 k apply -f 2-deployment-v2.yml
@@ -66,6 +68,7 @@ while true; do curl -s http://demo.localhost/ | grep background-color; sleep 1; 
 
 - Create  namespaces
 ```
+d examples/2-example
 kubectl apply -f 0-dev.yml
 kubectl apply -f 1-stage.yml
 ```
