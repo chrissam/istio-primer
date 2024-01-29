@@ -68,7 +68,7 @@ while true; do curl -s http://demo.localhost/ | grep background-color; sleep 1; 
 
 - Create  namespaces
 ```
-d examples/2-example
+cd examples/2-example
 kubectl apply -f 0-dev.yml
 kubectl apply -f 1-stage.yml
 ```
